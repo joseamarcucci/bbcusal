@@ -4,7 +4,7 @@ import numpy as np
 import datetime
 from datetime import timedelta
 from datetime import datetime
-from data.create_data import create_table
+
 from math import ceil
 from bokeh.plotting import figure
 import bokeh, bokeh.plotting
