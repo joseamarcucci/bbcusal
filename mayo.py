@@ -97,8 +97,19 @@ def app():
        df['Minutos Usados']=round(pd.to_timedelta(df[above_352][bool_series]['AttendeeTotalTimeInSession']).dt.total_seconds()/60)
        totalesua=df[above_352][bool_series].groupby("SessionName")['Minutos Usados'].sum()
     #dupli=dupli.sort_values(by=['RoomClosed'])
-      
-       st.table(totalesua)
+       df991 = pd.DataFrame({
+       "Fecha": totalesua['RecordingCreated'],"Nombre":totalesua['SessionName'],"Autor": totalesua['SessionOwner'],"Duracion": totalesua['RecordingDuration'],"Tamaño": totalesua['StorageUsageGigabytes']
+        })
+       cds = ColumnDataSource(df991)
+       columns = [
+       TableColumn(field="Fecha", title="Fecha",width = 100),
+       TableColumn(field="Nombre", title="Nombre",formatter=HTMLTemplateFormatter(template='<%= value %>'),width = 500),
+       TableColumn(field="Autor", title="Autor", formatter=HTMLTemplateFormatter(template='<%= value %>'),width = 200),
+       TableColumn(field="Duracion", title="Duracion", formatter=HTMLTemplateFormatter(template='<%= value %>'),width = 100),
+       TableColumn(field="Tamaño", title="Tamaño", formatter=HTMLTemplateFormatter(template='<%= value %>'),width = 100),
+        ]
+       p3 = DataTable(source=cds, columns=columns, css_classes=["my_table"],index_position=None,width=1100, height=550)
+       #st.table(totalesua)
     if st.checkbox('Comparativo Salas x UA'):
        df['Minutos Usados']=round(pd.to_timedelta(df[above_352]['AttendeeTotalTimeInSession']).dt.total_seconds()/60)
        totalesuas=df[above_352].groupby("ua")['Minutos Usados'].sum() 
