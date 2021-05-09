@@ -3,7 +3,6 @@ numpy==1.20.2
 pandas==1.2.3
 streamlit==0.79.0
 datetime
-data.create_data
 math
 bokeh.plotting
 bokeh
