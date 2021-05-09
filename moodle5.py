@@ -18,8 +18,8 @@ def app():
     #df = pd.read_csv('/mydrive/MyDrive/multiapps/bbc204.csv')
     #SHEET_ID = '12D4hfpuIkT7vM69buu-v-r-UYb8xx4wM1zi-34Fs9ck'
     #df = pd.read_csv('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv')
-    #df = pd.read_csv('https://docs.google.com/spreadsheets/d/1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg/export?format=csv')
-    df = pd.read_csv('/mydrive/MyDrive/multiapps/mayo.csv')
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg/export?format=csv')
+    #df = pd.read_csv('/mydrive/MyDrive/multiapps/mayo.csv')
     #CHOICES = {456987: "PAD", 7896321: "FCEyE", 4578123: "MED"}
 
 
