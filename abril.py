@@ -17,9 +17,9 @@ def app():
     st.markdown("<h3 style='text-align:  left; color: #008357;'>Salas Collaborate</h3>", unsafe_allow_html=True)
    
     #SHEET_ID = '12D4hfpuIkT7vM69buu-v-r-UYb8xx4wM1zi-34Fs9ck'
-    #df = pd.read_csv('https://docs.google.com/spreadsheets/d/1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg/export?format=csv&gid=1983291520')
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg/export?format=csv&gid=1983291520')
     buff, col, buff2 = st.beta_columns([1,3,1])
-    df = pd.read_csv('https://drive.google.com/file/d/1gTkZbwZVomNL2zR67gCpb5sk5HamvsHf/view?usp=sharing')
+   
     df=df.sort_values(by=['SessionOwner'])
     #options = ['USAL_lti_production', 'USAL_rest_production','josemarcucci']
     df8 = pd.DataFrame({
