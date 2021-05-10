@@ -34,23 +34,8 @@ def app():
     #st.table(duplit[['SessionOwner','SessionName']])
 
     buff, col, buff2 = st.beta_columns([1,3,1])
-    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
-
-
-    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
-    
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
-    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
-    #usuarios.loc['Total']= usuarios.sum()
-    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-   
-
-
-    if st.checkbox('Usuarios totales x día'):
-    
-       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-       st.line_chart(usuarios)
+  
+       
     #if st.checkbox('Ver comparativo UAs'):
        #st.bar_chart(totales)
     '## Tipo de plataforma'
@@ -100,7 +85,22 @@ def app():
    
     #dupli.columns=['RoomClosed', 'SessionName']
     #dupli.rename(columns={'RoomClosed':'Fecha','SessioName':'Sala'})
+    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
 
+
+    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
+    
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
+    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
+    #usuarios.loc['Total']= usuarios.sum()
+    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+   
+
+
+    if st.checkbox('Usuarios totales x día'):
+       st.line_chart(usuarios)
+       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
     if st.checkbox('Mostrar Salas Marzo de la UA'):
        #st.table(df[above_352][bool_series][['RoomOpened','SessionName','NameOfAttendee','AttendeeTotalTimeInSession']])
        df['Minutos Usados']=round(pd.to_timedelta(df[above_352][bool_series]['AttendeeTotalTimeInSession']).dt.total_seconds()/60)
