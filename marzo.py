@@ -34,7 +34,7 @@ def app():
     #st.table(duplit[['SessionOwner','SessionName']])
 
     buff, col, buff2 = st.beta_columns([1,3,1])
-     df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
+    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
 
 
     usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
