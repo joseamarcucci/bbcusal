@@ -31,23 +31,7 @@ def app():
     
     
     buff.table(df8) 
-    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
 
-
-    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
-    
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
-    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
-    #usuarios.loc['Total']= usuarios.sum()
-    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-    
-
-
-    if st.checkbox('Usuarios totales x día'):
-       
-       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-       st.line_chart(usuarios)
     options = ['ALEJANDRA.LAMBERTI','josemarcucci'] 
     # selecting rows based on condition 
     df = df.loc[~df['SessionOwner'].isin(options)] 
@@ -107,7 +91,23 @@ def app():
     #st.sidebar.write('Salas: ',aulast)
     
     dupli.index = [""] * len(dupli)
+    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
 
+
+    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
+    
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
+    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
+    #usuarios.loc['Total']= usuarios.sum()
+    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+    
+
+
+    if st.checkbox('Usuarios totales x día'):
+       st.line_chart(usuarios)
+       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+       
     #dupli.columns=['RoomClosed', 'SessionName']
     #dupli.rename(columns={'RoomClosed':'Fecha','SessioName':'Sala'})
     if st.checkbox('Mostrar Salas de la UA'):
