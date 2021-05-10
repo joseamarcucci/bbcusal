@@ -19,7 +19,7 @@ def app():
     #df = pd.read_csv('https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv')
     #df = pd.read_csv('https://docs.google.com/spreadsheets/d/1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg/export?format=csv')
 
-    df = pd.read_csv('/mydrive/MyDrive/multiapps/abril.csv')
+    df = pd.read_csv('https://drive.google.com/file/d/1gTkZbwZVomNL2zR67gCpb5sk5HamvsHf/view?usp=sharing')
     df=df.sort_values(by=['SessionOwner'])
     
     CHOICES = {456987: "PAD", 7896321: "FCEyE", 43: "MED", 453: "ELM", 45783: "ING", 8123: "LENGUAS", 48123: "FHGT", 457123: "JURI", 457823: "FCS", 4578128: "FLEO", 4578123: "HGT", 578128:"FCJ"}
