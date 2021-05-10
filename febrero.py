@@ -36,23 +36,7 @@ def app():
     totales=df.groupby("SessionOwner")['Minutos'].sum()
     #st.table(totales)
     #st.table(duplit[['SessionOwner','SessionName']])
-    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
 
-
-    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
-    
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
-    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
-    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
-    #usuarios.loc['Total']= usuarios.sum()
-    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-    
-
-
-    if st.checkbox('Usuarios totales x día'):
-       
-       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
-       st.line_chart(usuarios)
     buff, col, buff2,  = st.beta_columns([1,3,1])
     '## Tipo de plataforma'
     #if st.checkbox('Ver comparativo UAs'):
@@ -104,7 +88,23 @@ def app():
 
     #dupli.columns=['RoomClosed', 'SessionName']
     #dupli.rename(columns={'RoomClosed':'Fecha','SessioName':'Sala'})
+    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
+
+
+    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
     
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
+    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
+    #usuarios.loc['Total']= usuarios.sum()
+    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+    
+
+
+    if st.checkbox('Usuarios totales x día'):
+       st.line_chart(usuarios)
+       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+      
     
    
     if st.checkbox('Mostrar Salas Febrero de la UA'):
