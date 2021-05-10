@@ -85,6 +85,23 @@ def app():
     #st.sidebar.write('Salas: ',aulast)
     
     dupli.index = [""] * len(dupli)
+    df['AttendeeFirstJoinTime'] = pd.to_datetime(df['AttendeeFirstJoinTime']).dt.strftime('%y-%m-%d')
+
+
+    usuarios=df.sort_values(by=['AttendeeFirstJoinTime'])
+    
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].count()
+    usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique()
+    #usuarios=usuarios.groupby("AttendeeFirstJoinTime", as_index=False)['NameOfAttendee'].nunique().sum()
+    #usuarios.loc['Total']= usuarios.sum()
+    #st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+    
+
+
+    if st.checkbox('Usuarios x día'):
+       
+       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+       st.line_chart(usuarios)
     #dupli.columns=['RoomClosed', 'SessionName']
     #dupli.rename(columns={'RoomClosed':'Fecha','SessioName':'Sala'})
     
