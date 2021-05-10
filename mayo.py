@@ -104,9 +104,9 @@ def app():
 
 
     if st.checkbox('Usuarios totales x día'):
-       
-       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
        st.line_chart(usuarios)
+       st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
+       
     #dupli.columns=['RoomClosed', 'SessionName']
     #dupli.rename(columns={'RoomClosed':'Fecha','SessioName':'Sala'})
     if st.checkbox('Mostrar Salas de la UA'):
