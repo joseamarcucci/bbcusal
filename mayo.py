@@ -103,7 +103,7 @@ def app():
     
 
 
-    if st.checkbox('Usuarios x día'):
+    if st.checkbox('Usuarios totales x día'):
        
        st.table(usuarios[['NameOfAttendee','AttendeeFirstJoinTime']])
        st.line_chart(usuarios)
