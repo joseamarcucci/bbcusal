@@ -7,7 +7,7 @@ from multiapp import MultiApp
 
 #import multiapp2 
 
-import home, data_stats,mayo,home5,moodle5,todas0,todasu,moodle,abril25,graba,febrero,marzo,abril,home4,home2,moodle2,moodle4,usuarios,usuarios0,usuariosbbc # import your app modules here
+import home, data_stats,mayo,meses,home5,moodle5,todas0,todasu,moodle,abril25,graba,febrero,marzo,abril,home4,home2,moodle2,moodle4,usuarios,usuarios0,usuariosbbc # import your app modules here
 
 
 st.set_page_config(
@@ -21,6 +21,7 @@ app = MultiApp()
 
 #st.sidebar.markdown("<h3 style='text-align: left; color: black;font-weight:500;'>Blackboard Collaborate y ULTRA</h3>", unsafe_allow_html=True)
 app.add_app("Blackboard Collaborate:", todasu.app)
+app.add_app("Usuarios mensuales", meses.app)
 app.add_app("Febrero", febrero.app)
 app.add_app("Campus BBLearn ", home2.app)
 app.add_app("Campus Moodle ", moodle2.app)
