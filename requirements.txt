@@ -6,4 +6,4 @@ datetime
 bokeh
 altair
 gspread
-google.colab
+
