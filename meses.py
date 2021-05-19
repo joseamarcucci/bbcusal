@@ -27,7 +27,7 @@ def app():
     st.subheader("")
     col1, col2, col3 = st.beta_columns([1,2,1])  
     col2.markdown("<h3 style='text-align: left; color: #008357;'>Uso Collaborate</h3>", unsafe_allow_html=True)
-    col2.write("Minutos consumidos: 36951739")
+    col2.write("Minutos consumidos: 38303371")
     # MultiSelect
     # initialize list of lists
     data = [['Febrero', '1yvDAVczwETC2JwcNeaYx2h2PD5fGCSWdJoY4QoMqR48'], ['Marzo', '1bFvGJ8q1C-H7QiUY395L3UzuQk_xrUAWsaNOagQ9c5s'], ['Abril', '1kNaXpaA0OiKZyWBfeBwm9SW6O9YfpSh6DcDQaFZGkSg'], ['Mayo', '1ZP1OcE1DWAr8lhWqo2apJH7V9xN9N-4mVaa87MC7HL4']]
