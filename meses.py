@@ -18,7 +18,7 @@ def app():
     st.markdown('<style>div[data-baseweb="select"] > div {text-transform: capitalize;}body{background-color:#008357;}</style>', unsafe_allow_html=True)
     st.markdown(
     """<style>
-        .css-19ih76x{text-align: left !important}
+        
         .grid-canvas{font-size:14px;}
         .slick-header-columns{font-size:16px;font-weight:500;color:#008357;}
     </style>
