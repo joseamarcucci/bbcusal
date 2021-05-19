@@ -113,7 +113,7 @@ def app():
     timesu=times1u.values.sum()
     times3t=df5.index
     aulast=len(times3t)
-    st.write(round(timesu,1))
+    #st.write(round(timesu,1))
     df8 = pd.DataFrame({
     'Salas': [aulast],
      'Usuarios':[round(df55,0)],
