@@ -132,8 +132,8 @@ def app():
     #df8=df8.sort_values(by=['Minutos'])
     df81.index = [""] * len(df81)
     buff.table(df81) 
-    if st.checkbox('Ver salas X UA:'):
-     buff.table(usuarios)
+    
+    buff.table(usuarios)
     df = pd.read_csv('https://docs.google.com/spreadsheets/d/'+a+'/export?format=csv')
     options = ['ALEJANDRA.LAMBERTI','josemarcucci'] 
     # selecting rows based on condition 
@@ -167,8 +167,8 @@ def app():
 
     usuariosl.columns = ['UA', 'Usuarios','Minutos']
     usuariosl.index = [""] * len(usuariosl)
-    if st.checkbox('Ver aulas X UA:'):
-     col.table(usuariosl)
+    
+    col.table(usuariosl)
 
 
     df['Minutos']=round(pd.to_timedelta(df[above_3522]['AttendeeTotalTimeInSession']).dt.total_seconds()/60)
@@ -192,8 +192,8 @@ def app():
     usuariosm['SessionName'] = usuariosm['SessionName'].str.slice(0,12)
     usuariosm.columns = ['UA', 'Usuarios','Minutos']
     usuariosm.index = [""] * len(usuariosm)
-    if st.checkbox('Ver aulas x UA:'):
-     buff2.table(usuariosm)
+    
+    buff2.table(usuariosm)
     
 
 
