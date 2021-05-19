@@ -17,7 +17,7 @@ def app():
     st.markdown("<h3 style='text-align:  left; color: #008357;'>Salas Collaborate</h3>", unsafe_allow_html=True)
    
     #SHEET_ID = '12D4hfpuIkT7vM69buu-v-r-UYb8xx4wM1zi-34Fs9ck'
-    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1_iz1sWXVezBgjWe_BhDxdc00U7Pg8BFwVwVqCgjivsU/export?format=csv')
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1ZP1OcE1DWAr8lhWqo2apJH7V9xN9N-4mVaa87MC7HL4/export?format=csv')
     buff, col, buff2 = st.beta_columns([1,3,1])
     #df = pd.read_csv('/mydrive/MyDrive/multiapps/mayo.csv')
     df=df.sort_values(by=['SessionOwner'])
