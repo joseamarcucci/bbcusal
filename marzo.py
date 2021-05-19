@@ -16,7 +16,7 @@ def app():
     st.markdown("<h3 style='text-align:  left; color: #008357;'>Salas Collaborate</h3>", unsafe_allow_html=True)
    
     #SHEET_ID = '12D4hfpuIkT7vM69buu-v-r-UYb8xx4wM1zi-34Fs9ck'
-    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1yvDAVczwETC2JwcNeaYx2h2PD5fGCSWdJoY4QoMqR48/export?format=csv&gid=1411220795')
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1bFvGJ8q1C-H7QiUY395L3UzuQk_xrUAWsaNOagQ9c5s/export?format=csv')
     
     #df = pd.read_csv('/mydrive/MyDrive/multiapps/bbc204.csv')
     df=df.sort_values(by=['SessionOwner'])
