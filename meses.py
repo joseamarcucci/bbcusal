@@ -105,7 +105,7 @@ def app():
     #st.bokeh_chart(p3)
     usuarios.index = [""] * len(usuarios)
     usuarios.columns = ['UA', 'Usuarios','Minutos']
-    usuarios.to_csv('/mydrive/MyDrive/multiapps/survey_data.csv',index=False)
+    #usuarios.to_csv('/mydrive/MyDrive/multiapps/survey_data.csv',index=False)
    
     df55=(usuarios['Usuarios']).sum()
     timeu = pd.DatetimeIndex(df22['AttendeeTotalTimeInSession'])
