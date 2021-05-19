@@ -21,7 +21,7 @@ app = MultiApp()
 
 #st.sidebar.markdown("<h3 style='text-align: left; color: black;font-weight:500;'>Blackboard Collaborate y ULTRA</h3>", unsafe_allow_html=True)
 app.add_app("Blackboard Collaborate:", todasu.app)
-app.add_app("Usuarios mensuales", meses.app)
+app.add_app("Reporte gral y mensual", meses.app)
 app.add_app("Febrero", febrero.app)
 app.add_app("Campus BBLearn ", home2.app)
 app.add_app("Campus Moodle ", moodle2.app)
