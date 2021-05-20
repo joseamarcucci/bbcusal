@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 from bokeh.plotting import figure
 import bokeh, bokeh.plotting
-
+import plotly.express as px
+import plotly.graph_objects as go
 from bokeh.models import ColumnDataSource, CustomJS
 from bokeh.models import DataTable, TableColumn, HTMLTemplateFormatter
 
@@ -214,23 +215,25 @@ def app():
     dfin['%']= 100*dfin['Minutos']/dfin['Minutos'].sum()
     dfin.index = [""] * len(dfin)
     #col.line_chart(dfin['UA','Minutos'])
-    st.title("Totales")
+    st.title("Distribución")
+
+    
+
     fig = px.pie(df, values=dfin['%'], names=dfin['UA'], title='Total Confirmed Cases')
-    
+    fig.update_layout(
+    autosize=False,
+    width=800,
+    height=600,
+    margin=dict(
+        l=50,
+        r=50,
+        b=100,
+        t=100,
+        pad=4
+    ),
+        paper_bgcolor="White",
+    )
     st.plotly_chart(fig)
-    if not st.checkbox('Minutos', False, key=1):
-        features = dfin['UA']
-        features_importances = dfin['Minutos']
-
-        chart_data = pd.DataFrame()
-        chart_data['UAs'] = features
-        chart_data['Minutos'] = features_importances
-
-        chart_v1 = alt.Chart(chart_data).mark_bar().encode(
-        x='UAs',
-        y='Minutos')
-        st.write("", "", chart_v1)
-    
     
 
     
