@@ -220,7 +220,7 @@ def app():
 
     
 
-    fig = px.pie(df, values=dfin['%'], names=dfin['UA'], title='Total Confirmed Cases')
+    fig = px.pie(df, values=dfin['%'], names=dfin['UA'], title='% x UA')
     fig.update_layout(
     autosize=False,
     width=800,
