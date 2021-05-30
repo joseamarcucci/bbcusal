@@ -67,7 +67,9 @@ def app():
     #st.write(a)
   
     df = pd.read_csv('https://docs.google.com/spreadsheets/d/1ZP1OcE1DWAr8lhWqo2apJH7V9xN9N-4mVaa87MC7HL4/export?format=csv')
-    
+    maxValue = df['RoomOpened'].max()
+    minValue = df['RoomOpened'].min()
+    st.write('Período:',minValue,' al ',maxValue)
     #df = pd.read_csv('/mydrive/MyDrive/multiapps/bbc204.csv')
     df=df.sort_values(by=['SessionOwner'])
     options = ['ALEJANDRA.LAMBERTI','josemarcucci']
