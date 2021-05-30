@@ -7,7 +7,7 @@ from multiapp import MultiApp
 
 #import multiapp2 
 
-import home, data_stats,tmayo,meses,mesesxuym,home5,moodle5,todas0,todasu,moodle,abril25,graba,tfebrero,tmarzo,tabril,home4,home2,moodle2,moodle4,usuarios,usuarios0,usuariosbbc # import your app modules here
+import home, data_stats,tmayo,tmayo2,meses,mesesxuym,home5,moodle5,todas0,todasu,moodle,abril25,graba,tfebrero,tmarzo,tabril,home4,home2,moodle2,moodle4,usuarios,usuarios0,usuariosbbc # import your app modules here
 
 
 st.set_page_config(
@@ -33,6 +33,7 @@ app.add_app("Abril", tabril.app)
 #app.add_app("Campus BBLearn", home4.app)
 #app.add_app("Campus Moodle", moodle4.app)
 app.add_app("Mayo", tmayo.app)
+app.add_app("Mayo30", tmayo2.app)
 #app.add_app("16 al 21 de abril", data_stats.app)
 #app.add_app("22 al 25 de abril", abril25.app)
 #app.add_app("Campus BBLearn", home5.app)
