@@ -35,7 +35,7 @@ def app():
     st.markdown("<h3 style='text-align: left; color: #008357;'>Uso Collaborate</h3>", unsafe_allow_html=True)
 
     st.subheader('Totales del mes') 
-    st.subheader("Mayo")
+    st.subheader("Junio")
     #st.write("Minutos consumidos: 38303371")
     
     col1, col2, col3 = st.beta_columns([1,2,1])
@@ -64,7 +64,7 @@ def app():
 
     #st.write(a)
   
-    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1lRBL9I9O9nhGG7fQz2VafwParvppg9GPtBzZiM5Z3b0/export?format=csv')
+    df = pd.read_csv('https://docs.google.com/spreadsheets/d/1jLWPmcXmeDcHsIWu4tYLBYrFHr7H8Ycea4gMNhpERUY/export?format=csv')
     
     #df = pd.read_csv('/mydrive/MyDrive/multiapps/bbc204.csv')
     maxValue = df['RoomOpened'].max()
