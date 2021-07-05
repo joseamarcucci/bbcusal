@@ -130,7 +130,7 @@ def app():
     aulast=len(times3t)
     #buff.write(round(timesu,))
     st.sidebar.write('Minutos/mes: ',round(timesu,0))
-    st.sidebar.write('Minutos/totales: ',6569440+round(timesu,0))
+    st.sidebar.write('Minutos/totales: ',48269353+round(timesu,0))
     df8 = pd.DataFrame({
  
   
